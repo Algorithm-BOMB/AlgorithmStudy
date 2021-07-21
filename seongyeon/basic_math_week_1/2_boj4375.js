@@ -1,11 +1,21 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+// 입력
+const input = require('fs')
+  .readFileSync('/dev/stdin')
+  .toString()
+  .split('\n')
+  .map(Number);
 
-let oneNumber;
+let answer;
+let count;
 for (number of input) {
-  oneNumber = '1';
-  while (oneNumber % number != 0) oneNumber += '1';
-
-  console.log(oneNumber.length);
+  answer = 1;
+  count = 1;
+  while (answer % number != 0) {
+    answer = answer * 10 + 1;
+    answer %= number;
+    count++;
+  }
+  console.log(count);
 }
 
-// 시간초과ㅠ
+// 왜 시간초과냐;;
