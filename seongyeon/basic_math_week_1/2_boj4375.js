@@ -1,17 +1,7 @@
-/* 입력 */
-const fs = require('fs');
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 
-const stdin = (
-  process.platform === 'linux'
-    ? fs.readFileSync('/dev/stdin').toString()
-    : `3
-7
-9901`
-).split('\n');
-
-/* 구현 */
 let oneNumber;
-for (number of stdin) {
+for (number of input) {
   oneNumber = '1';
   while (oneNumber % number != 0) oneNumber += '1';
 

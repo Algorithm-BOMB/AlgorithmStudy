@@ -1,26 +1,11 @@
-/* 입력 */
-const fs = require('fs');
+// 입력
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 
-const stdin = (
-  process.platform === 'linux'
-    ? fs.readFileSync('/dev/stdin').toString()
-    : `4
-4 6 2 3`
-).split('\n');
-
-/* 구현 */
-
-const len = stdin[0];
-const nums = stdin[1].split(' ');
-
-// sort 이용
-nums.sort(function (a, b) {
-  return a - b;
-});
-
-console.log(nums[0] * nums[len - 1]);
-
-// max, min 이용 - 메모리랑 시간 더 많이 잡아먹음
-// const max = Math.max.apply(null, nums);
-// const min = Math.min.apply(null, nums);
-// console.log(max * min);
+const nums = input[1].split(' ').map(Number);
+let max = 1;
+let min = 1000001;
+for (num of nums) {
+  if (num > max) max = num;
+  if (num < min) min = num;
+}
+console.log(max * min);
