@@ -10,14 +10,12 @@ const stdin = (
 ).split('\n');
 
 /* 구현 */
+let oneNumber;
 for (number of stdin) {
-  let count = number.length;
-  let oneNumber = '1'.repeat(count);
-  while (oneNumber % number != 0) {
-    count += 1;
-    oneNumber += '1';
-  }
-  console.log(count);
+  oneNumber = '1';
+  while (oneNumber % number != 0) oneNumber += '1';
+
+  console.log(oneNumber.length);
 }
 
-// 시간초과ㅠㅠ
+// 시간초과ㅠ
