@@ -1,9 +1,6 @@
-const input = require('fs')
-  .readFileSync('/dev/stdin')
-  .toString()
-  .split('\n')
-  .map(Number);
+const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
+const input = stdin.split('\n').map(Number);
 let n;
 for (let test = 1; test < input.length; test++) {
   n = input[test];

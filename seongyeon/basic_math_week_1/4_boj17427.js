@@ -1,6 +1,6 @@
-const input = require('fs').readFileSync('/dev/stdin').toString();
+const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
-const n = Number(input);
+const n = Number(stdin);
 let gSum = 0;
 let fSum;
 

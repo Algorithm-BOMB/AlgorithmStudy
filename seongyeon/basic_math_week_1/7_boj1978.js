@@ -1,5 +1,6 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
+const input = stdin.split('\n');
 const nums = input[1].split(' ').map(Number);
 let count = nums.length;
 for (num of nums) {
