@@ -4,14 +4,7 @@ const input = require('fs')
   .split(' ')
   .map(Number);
 
-let bigger, smaller;
-if (input[0] > input[1]) {
-  bigger = input[0];
-  smaller = input[1];
-} else {
-  bigger = input[1];
-  smaller = input[0];
-}
+let [bigger, smaller] = input.sort((a, b) => b - a);
 
 const multiply = bigger * smaller;
 let remainder = bigger % smaller;
