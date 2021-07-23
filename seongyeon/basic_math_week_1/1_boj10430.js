@@ -1,9 +1,6 @@
 const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
-const input = stdin.split(' ');
-const a = Number(input[0]);
-const b = Number(input[1]);
-const c = Number(input[2]);
+const [a, b, c] = stdin.split(' ').map(Number);
 
 console.log((a + b) % c);
 console.log(((a % c) + (b % c)) % c);

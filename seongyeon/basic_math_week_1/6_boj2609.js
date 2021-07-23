@@ -1,7 +1,9 @@
 const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
-const input = stdin.split(' ').map(Number);
-let [bigger, smaller] = input.sort((a, b) => b - a);
+let [bigger, smaller] = stdin
+  .split(' ')
+  .map(Number)
+  .sort((a, b) => b - a);
 
 const multiply = bigger * smaller;
 let remainder = bigger % smaller;
