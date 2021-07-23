@@ -17,4 +17,4 @@ for (number of input) {
   console.log(count);
 }
 
-// 왜 시간초과냐;;
+// 시간초과
