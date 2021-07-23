@@ -14,6 +14,7 @@ for (number of input) {
     answer %= number;
     count++;
   }
+
   console.log(count);
 }
 

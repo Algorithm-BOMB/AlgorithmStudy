@@ -7,4 +7,5 @@ for (num of nums) {
   if (num > max) max = num;
   if (num < min) min = num;
 }
+
 console.log(max * min);
