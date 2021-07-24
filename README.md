@@ -49,4 +49,4 @@ BFS의 단점
 
 ## 자료 출처
 
-https://coding-factory.tistory.com/611
+DFS, BFS: https://coding-factory.tistory.com/611
