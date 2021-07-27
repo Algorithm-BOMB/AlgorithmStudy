@@ -14,5 +14,3 @@ for (number of input) {
 
   console.log(count);
 }
-
-// 시간초과
