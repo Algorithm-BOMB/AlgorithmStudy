@@ -1,31 +1,29 @@
 const stdin = require('fs').readFileSync('/dev/stdin').toString();
-
 const input = stdin.split('\n').map(Number);
 const LENGTH = 1000000;
-let isPrimeNumber = new Array(LENGTH + 1).fill(true);
+let isPrime = new Array(LENGTH + 1).fill(true);
 
-isPrimeNumber[1] = false;
+isPrime[1] = false;
 for (let i = 2; i <= LENGTH; i++) {
-  if (isPrimeNumber[i])
+  if (isPrime[i])
     for (let j = i * 2; j <= LENGTH; j += i) {
-      isPrimeNumber[j] = false;
+      isPrime[j] = false;
     }
 }
 
-let n, primeNumber;
-let result = [];
-for (let i = 0; i < input.length - 1; i++) {
-  n = input[i];
-  primeNumber = 2;
-  while (primeNumber <= n - primeNumber) {
-    if (isPrimeNumber[n - primeNumber]) {
-      result.push(n + ' = ' + primeNumber + ' + ' + (n - primeNumber));
+let isRight;
+let result = '';
+for (n of input) {
+  if (n === 0) break;
+  isRight = false;
+  for (let j = 2; j <= n / 2; j++) {
+    if (isPrime[j] && isPrime[n - j]) {
+      result += `${n} = ${j} + ${n - j}\n`;
+      isRight = true;
       break;
     }
-    while (!isPrimeNumber[++primeNumber]) {}
   }
-  if (primeNumber > n - primeNumber)
-    result.push("Goldbach's conjecture is wrong.");
+  if (!isRight) result.push("Goldbach's conjecture is wrong.");
 }
 
-console.log(result.join('\n'));
+console.log(result);
