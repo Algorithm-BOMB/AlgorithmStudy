@@ -95,3 +95,8 @@ print(bin(0b1010 ^ (1 << n)))  #  0b10
 ### 실전
 - [백준 1562번 계단 수](https://www.acmicpc.net/problem/1562) : 0~9를 모두 순회했는지 비트마스크로 확인
 - [백준 2098번 외판원 순회](https://www.acmicpc.net/problem/2098) : 모든 경로를 순회했는지 비트마스크로 확인
+
+
+## 더 알고싶으면
+
+- https://ckdgus.tistory.com/38 
