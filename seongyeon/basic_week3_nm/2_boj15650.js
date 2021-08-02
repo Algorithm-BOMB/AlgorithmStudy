@@ -2,23 +2,19 @@ const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
 const [n, m] = stdin.split(' ').map(Number);
 let arr = new Array(m);
-let visited = new Array(9).fill(false);
 let result = '';
 
-function dfs(depth) {
+function dfs(depth, start) {
   if (depth === m) {
     result += arr.join(' ') + '\n';
     return;
   }
 
-  for (let i = 1; i <= n; i++) {
-    if (visited[i]) continue;
+  for (let i = start; i <= n; i++) {
     arr[depth] = i;
-    visited[i] = true;
-    dfs(depth + 1);
-    visited[i] = false;
+    dfs(depth + 1, i + 1);
   }
 }
 
-dfs(0);
+dfs(0, 1);
 console.log(result);
