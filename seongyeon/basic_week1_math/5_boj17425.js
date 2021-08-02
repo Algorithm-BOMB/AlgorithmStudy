@@ -9,7 +9,6 @@ for (let i = 2; i < LENGTH; i++) {
   for (let j = 1; i * j < LENGTH; j++) {
     fList[i * j] += i;
   }
-  gList[i] = gList[i - 1] + fList[i];
 }
 
 for (let i = 1; i < LENGTH; i++) {
