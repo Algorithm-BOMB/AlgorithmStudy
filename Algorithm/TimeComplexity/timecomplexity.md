@@ -9,12 +9,12 @@
 
 - O(n)으로 표기한다.
 - O(n)은 입력되는 n에 따라 결정되는 시간 복잡도 함수이다.
-- O(1), O(logn), O(n), O(nlogn), O(n^2^), O(2^n^), O(n!) 등으로 표기한다.
+- O(1), O(logn), O(n), O(nlogn), O(n<sup>2</sup>), O(2<sup>n<sup>), O(n!) 등으로 표기한다.
 - 입력되는 n의 크기에 따라 시간 복잡도가 기하급수적으로 늘어날 수 있다.
 
 ### 시간 복잡도 크기 순서
 
-O(1) < O(logn) < O(n) < O(nlogn) < O(n^2^) < O(2^n^) < O(n!)
+O(1) < O(logn) < O(n) < O(nlogn) < O(n<sup>2</sup>) < O(2<sup>n</sup>) < O(n!)
 
 1.O(1)
 
