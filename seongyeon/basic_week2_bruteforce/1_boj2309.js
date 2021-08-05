@@ -1,5 +1,14 @@
-const stdin = require('fs').readFileSync('/dev/stdin').toString();
+// const stdin = require('fs').readFileSync('/dev/stdin').toString();
 
+const stdin = `20
+7
+23
+19
+10
+15
+25
+8
+13`;
 const dwarfs = stdin
   .split('\n')
   .map(Number)
@@ -9,20 +18,14 @@ const dwarfs = stdin
 let sum = 0;
 for (let height of dwarfs) sum += height;
 
-let i, j;
-outer: for (i = 0; i < 8; i++) {
-  sum -= dwarfs[i];
-  for (j = i + 1; j < 9; j++) {
-    sum -= dwarfs[j];
-    if (sum === 100) break outer;
-    sum += dwarfs[j];
+outer: for (let i = 0; i < 8; i++) {
+  for (let j = i + 1; j < 9; j++) {
+    if (sum - dwarfs[i] - dwarfs[j] === 100) {
+      dwarfs.splice(j, 1);
+      dwarfs.splice(i, 1);
+      break outer;
+    }
   }
-  sum += dwarfs[i];
 }
 
-let result = '';
-for (let index in dwarfs) {
-  if (index == i || index == j) continue;
-  result += dwarfs[index] + '\n';
-}
-console.log(result);
+console.log(dwarfs.join('\n'));
