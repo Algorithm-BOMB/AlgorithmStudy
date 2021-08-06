@@ -1,40 +1,31 @@
 // const stdin = require('fs').readFileSync('/dev/stdin').toString();
-const stdin = `32
-2
-79
-4
-5
-6
-3
-1
-10`;
 
-const nums = stdin
+const stdin = `20
+7
+23
+19
+10
+15
+25
+8
+13`;
+const dwarfs = stdin
   .split('\n')
   .map(Number)
   .sort((a, b) => {
     return a - b;
   });
-let arr = new Array(7);
 let sum = 0;
-let isFound = false;
+for (let height of dwarfs) sum += height;
 
-function findDwarf(depth, index) {
-  if (isFound) return;
-
-  if (depth === 7) {
-    if (sum === 100) {
-      isFound = true;
-      console.log(arr.join('\n'));
+outer: for (let i = 0; i < 8; i++) {
+  for (let j = i + 1; j < 9; j++) {
+    if (sum - dwarfs[i] - dwarfs[j] === 100) {
+      dwarfs.splice(j, 1);
+      dwarfs.splice(i, 1);
+      break outer;
     }
-  } else if (index === 9) return;
-  else {
-    arr[depth] = nums[index];
-    sum += nums[index];
-    findDwarf(depth + 1, index + 1);
-    sum -= nums[index];
-    findDwarf(depth, index + 1);
   }
 }
 
-findDwarf(0, 0);
+console.log(dwarfs.join('\n'));
