@@ -102,7 +102,7 @@ function sum(n) {
 }
 ```
 
-- 두번째 알고리즘 \_ O(n)
+- 두번째 알고리즘 \_ O(1)
 
 ```
 function sum(n) {
