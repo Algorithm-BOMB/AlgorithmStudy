@@ -1,20 +1,12 @@
-// const stdin = require('fs').readFileSync('/dev/stdin').toString();
+const stdin = require('fs').readFileSync('/dev/stdin').toString().trim();
 
-const stdin = `20
-7
-23
-19
-10
-15
-25
-8
-13`;
 const dwarfs = stdin
   .split('\n')
   .map(Number)
   .sort((a, b) => {
     return a - b;
   });
+
 let sum = 0;
 for (let height of dwarfs) sum += height;
 
