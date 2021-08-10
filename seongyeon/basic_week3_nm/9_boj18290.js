@@ -11,5 +11,5 @@ const [n, m, k] = input[0].split(' ').map(Number);
 let grid = new Array(n);
 for (let i = 1; i <= n; i++) grid[i - 1] = input[i].split(' ').map(Number);
 
-console.log(n, m, k);
-console.log(grid);
+let max = -40000;
+function getMaxK(sum, pick) {}
