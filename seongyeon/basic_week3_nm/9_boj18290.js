@@ -12,4 +12,13 @@ let grid = new Array(n);
 for (let i = 1; i <= n; i++) grid[i - 1] = input[i].split(' ').map(Number);
 
 let max = -40000;
-function getMaxK(sum, pick) {}
+const x = [0, 0, 1, -1];
+const y = [-1, 1, 0, 0];
+function getMaxK(sum, pick) {
+  if (pick === 0) {
+    if (sum > max) max = sum;
+    return;
+  }
+}
+
+getMaxK(0, k);
