@@ -71,4 +71,4 @@ if __name__ == '__main__':
 
 ## 자료 출처
 
-DFS, BFS: https://galid1.tistory.com/507
+https://galid1.tistory.com/507
