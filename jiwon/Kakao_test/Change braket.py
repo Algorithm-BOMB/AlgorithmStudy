@@ -18,26 +18,29 @@ def get_balanced(p):
     e = 0
     u = ""
     while True:
-        u = p[0:e]
-        v = p[e:]
-        if u.count('(') != u.count(')'):
-            break
         e += 2
+        u = p[:e]
+        v = p[e:]
+        if e >= len(p) or u.count('(') == u.count(')'):
+            break
     return u, v
 
 
 def reverse_braket(p):
-
+    new_p = ""
+    for c in p:
+        new_p += "(" if c == ")" else ")"
+    return new_p
 
 
 def solution(p):
-    answer = ''
     if not p or is_right(p):
         return p
     else:
         u, v = get_balanced(p)
         if is_right(u):
-            answer = u * solution(v)
+            answer = u + solution(v)
         else:
-            answer = "(" + solution(v) + ")" + u[1:-1]
+            u = reverse_braket(u[1:-1])
+            answer = "(" + solution(v) + ")" + u
     return answer
